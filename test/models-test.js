@@ -37,6 +37,16 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Extending model classes', function(){
+    
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('models/extended-comment-activity.js').split('\n');
+      var actual  = result('models/extended-comment-activity.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
   describe('Works with files with no imports', function(){
     
     it('migrates the file correctly', function(){
