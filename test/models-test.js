@@ -37,5 +37,16 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with files with no imports', function(){
+    
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('models/no-import.js').split('\n');
+      var actual  = result('models/no-import.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
+
   
 });
