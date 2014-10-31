@@ -4,9 +4,9 @@ var path = require('path');
 var fs = require('fs');
 var rimraf = require('rimraf');
 
-describe('migrating models', function(){
+describe('custom app name', function(){
   function fixture(fixtureName){
-    var outDir = path.join(__dirname, "fixtures/vanilla/output", fixtureName);
+    var outDir = path.join(__dirname, "fixtures/custom_app_name/output", fixtureName);
     return fs.readFileSync(outDir).toString();
   }
   function result(fixtureName){
@@ -17,8 +17,9 @@ describe('migrating models', function(){
   var tmpDir = path.join(__dirname, "../tmp");
   before(function(){
     migrator = new EmberMigrator({
-      inputDirectory: path.join(__dirname, "fixtures/vanilla/input/"),
-      outputDirectory: tmpDir
+      inputDirectory: path.join(__dirname, "fixtures/custom_app_name/input"),
+      outputDirectory: tmpDir,
+      rootAppName: 'MyApp'
     });
     return migrator.run();
   });
@@ -27,10 +28,9 @@ describe('migrating models', function(){
     rimraf.sync(tmpDir);
   });
 
-  describe('single export file (only has one global)', function(){
+  describe('single export file', function(){
     
     it('migrates the file correctly', function(){
-
       var expected = fixture('models/comment-activity.js').split('\n');
       var actual  = result('models/comment-activity.js').split('\n');
       assert.deepEqual(actual, expected);
