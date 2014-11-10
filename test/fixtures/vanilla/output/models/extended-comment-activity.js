@@ -1,4 +1,4 @@
-import CommentActivity from "my-app/models/comment-activity";
+import CommentActivity from "/my-app/models/comment-activity";
 
 var ExtendedCommentActivity = CommentActivity.extend({
   someProperty: function(){
