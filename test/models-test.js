@@ -18,7 +18,8 @@ describe('migrating models', function(){
   before(function(){
     migrator = new EmberMigrator({
       inputDirectory: path.join(__dirname, "fixtures/vanilla/input/"),
-      outputDirectory: tmpDir
+      outputDirectory: tmpDir,
+      appName: 'my-app'
     });
     return migrator.run();
   });
@@ -33,6 +34,16 @@ describe('migrating models', function(){
 
       var expected = fixture('models/comment-activity.js').split('\n');
       var actual  = result('models/comment-activity.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
+  describe('Extending model classes', function(){
+    
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('models/extended-comment-activity.js').split('\n');
+      var actual  = result('models/extended-comment-activity.js').split('\n');
       assert.deepEqual(actual, expected);
     });
   });
