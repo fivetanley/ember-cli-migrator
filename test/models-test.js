@@ -68,4 +68,14 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with Ember Data', function(){
+
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('models/comment-activity-with-ds.js').split('\n');
+      var actual  = result('models/comment-activity-with-ds.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
 });
