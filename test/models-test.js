@@ -29,7 +29,7 @@ describe('migrating models', function(){
   });
 
   describe('single export file (only has one global)', function(){
-    
+
     it('migrates the file correctly', function(){
 
       var expected = fixture('models/comment-activity.js').split('\n');
@@ -39,7 +39,7 @@ describe('migrating models', function(){
   });
 
   describe('Extending model classes', function(){
-    
+
     it('migrates the file correctly', function(){
 
       var expected = fixture('models/extended-comment-activity.js').split('\n');
@@ -49,7 +49,7 @@ describe('migrating models', function(){
   });
 
   describe('Works with files with no imports', function(){
-    
+
     it('migrates the file correctly', function(){
 
       var expected = fixture('models/no-import.js').split('\n');
@@ -58,6 +58,14 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with Em', function(){
 
-  
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('models/comment-activity-with-em.js').split('\n');
+      var actual  = result('models/comment-activity-with-em.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
 });
