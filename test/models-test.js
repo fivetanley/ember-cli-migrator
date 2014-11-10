@@ -88,4 +88,18 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with models and serializers in the same file', function(){
+
+    it('migrates the files correctly', function(){
+
+      var expectedModel = fixture('models/user.js').split('\n');
+      var actualModel  = result('models/user.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      var expectedSerializer = fixture('serializers/user.js').split('\n');
+      var actualSerializer  = result('serializers/user.js').split('\n');
+      assert.deepEqual(actualSerializer, expectedSerializer);
+    });
+  });
+
 });
