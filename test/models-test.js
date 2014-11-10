@@ -78,4 +78,14 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with serializers', function(){
+
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('serializers/comment-activity.js').split('\n');
+      var actual  = result('serializers/comment-activity.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
 });
