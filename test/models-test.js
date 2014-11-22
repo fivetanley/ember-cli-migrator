@@ -92,8 +92,8 @@ describe('migrating models', function(){
 
     it('migrates the files correctly', function(){
 
-      var expectedModel = fixture('models/user.js').split('\n');
-      var actualModel  = result('models/user.js').split('\n');
+      var expectedModel = fixture('models/user-model-with-serializer.js').split('\n');
+      var actualModel  = result('models/user-model-with-serializer.js').split('\n');
       assert.deepEqual(actualModel, expectedModel);
 
       var expectedSerializer = fixture('serializers/user.js').split('\n');
