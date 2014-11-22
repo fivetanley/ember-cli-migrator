@@ -3,6 +3,7 @@
   "description": "migrates files over to the ember-cli structure",
   "version": "0.1.0",
   "dependencies": {
+    "commander": "^2.5.0",
     "mkdirp": "^0.5.0",
     "recast": "^0.8.0",
     "rsvp": "^3.0.14",
