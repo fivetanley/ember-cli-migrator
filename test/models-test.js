@@ -78,4 +78,28 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with serializers', function(){
+
+    it('migrates the file correctly', function(){
+
+      var expected = fixture('serializers/comment-activity.js').split('\n');
+      var actual  = result('serializers/comment-activity.js').split('\n');
+      assert.deepEqual(actual, expected);
+    });
+  });
+
+  describe('Works with models and serializers in the same file', function(){
+
+    it('migrates the files correctly', function(){
+
+      var expectedModel = fixture('models/user-model-with-serializer.js').split('\n');
+      var actualModel  = result('models/user-model-with-serializer.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      var expectedSerializer = fixture('serializers/user.js').split('\n');
+      var actualSerializer  = result('serializers/user.js').split('\n');
+      assert.deepEqual(actualSerializer, expectedSerializer);
+    });
+  });
+
 });
