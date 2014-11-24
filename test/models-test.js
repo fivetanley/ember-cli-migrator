@@ -128,4 +128,13 @@ describe('migrating models', function(){
       assert.deepEqual(actualModel, expectedModel);
     });
   });
+
+  describe('Works with simple mixins', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('mixins/useful.js').split('\n');
+      var actualModel  = result('mixins/useful.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
 });
