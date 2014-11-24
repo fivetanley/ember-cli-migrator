@@ -29,13 +29,10 @@ describe('custom app name', function(){
   });
 
   describe('single export file', function(){
-    
     it('migrates the file correctly', function(){
       var expected = fixture('models/comment-activity.js').split('\n');
       var actual  = result('models/comment-activity.js').split('\n');
       assert.deepEqual(actual, expected);
     });
   });
-
-  
 });
