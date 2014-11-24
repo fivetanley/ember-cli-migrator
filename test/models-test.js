@@ -102,4 +102,12 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with files which reopen existing classes multiple times', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('models/comment-activity-with-path-for-type.js').split('\n');
+      var actualModel  = result('models/comment-activity-with-path-for-type.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
 });
