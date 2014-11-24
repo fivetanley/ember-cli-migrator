@@ -10,7 +10,7 @@ var path = require('path');
 
 program
   .version('0.0.1')
-  //.option('-p, --peppers', 'Add peppers')
+  .option('-g, --global [name]', 'Add peppers')
   .parse(process.argv);
 
 var curDir = './';
@@ -18,7 +18,8 @@ var tmpDir = path.join(curDir, "/tmp");
 var migrator = new EmberMigrator({
   inputDirectory: curDir,
   outputDirectory: tmpDir,
-  appName: 'my-app'
+  appName: 'my-app',
+  rootAppName: program.global
 });
 
 migrator.run();
