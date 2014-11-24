@@ -119,4 +119,13 @@ describe('migrating models', function(){
       assert.deepEqual(actualModel, expectedModel);
     });
   });
+
+  describe('Works with simple controllers', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('controllers/comment-activity.js').split('\n');
+      var actualModel  = result('controllers/comment-activity.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
 });
