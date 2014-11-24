@@ -110,4 +110,13 @@ describe('migrating models', function(){
       assert.deepEqual(actualModel, expectedModel);
     });
   });
+
+  describe('Works with simple views', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/comment-activity.js').split('\n');
+      var actualModel  = result('views/comment-activity.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
 });
