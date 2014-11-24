@@ -92,8 +92,8 @@ describe('migrating models', function(){
 
     it('migrates the files correctly', function(){
 
-      var expectedModel = fixture('models/user-model-with-serializer.js').split('\n');
-      var actualModel  = result('models/user-model-with-serializer.js').split('\n');
+      var expectedModel = fixture('models/user.js').split('\n');
+      var actualModel  = result('models/user.js').split('\n');
       assert.deepEqual(actualModel, expectedModel);
 
       var expectedSerializer = fixture('serializers/user.js').split('\n');
@@ -134,6 +134,15 @@ describe('migrating models', function(){
     it('migrates the files correctly', function(){
       var expectedModel = fixture('mixins/useful.js').split('\n');
       var actualModel  = result('mixins/useful.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with known types inside unknown type folders', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('mixins/known-type.js').split('\n');
+      var actualModel  = result('mixins/known-type.js').split('\n');
       assert.deepEqual(actualModel, expectedModel);
     });
   });
