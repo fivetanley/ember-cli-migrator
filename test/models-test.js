@@ -10,7 +10,7 @@ describe('migrating models', function(){
     return fs.readFileSync(outDir).toString();
   }
   function result(fixtureName){
-    var file = path.join(tmpDir, 'app', fixtureName);
+    var file = path.join(tmpDir, 'my-app', fixtureName);
     return fs.readFileSync(file).toString();
   }
   var migrator;
