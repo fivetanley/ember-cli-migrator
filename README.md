@@ -6,6 +6,7 @@ migrate your files to the standard ember-cli structure, preserving git history
 Still a weekend, WIP project. The goal of the project is to convert global variables to ES6 Modules. For example:
 
 You can run the tests by running `mocha` in the root folder.
+
 You can run the command line tool by running the ember-cli-migrator script from within your existing ember project.
 
 ```javascript
