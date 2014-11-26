@@ -10,15 +10,19 @@ var path = require('path');
 
 program
   .version('0.0.1')
-  .option('-g, --global [name]', 'Add peppers')
+  .option('-g, --global [name]', 'Global namespace of Ember application, eg: "MyApplication = Ember.Application.."')
+  .option('-d, --directory [name]', 'Location of Ember application codebase')
+  .option('-s, --source [source_directory]', 'Directory to perform migration on')
+  .option('-t, --target [target_directory]',  'Directory to output result of migration')
   .parse(process.argv);
 
 var curDir = './';
 var tmpDir = path.join(curDir, "/tmp");
+
 var migrator = new EmberMigrator({
-  inputDirectory: curDir,
-  outputDirectory: tmpDir,
-  appName: 'my-app',
+  inputDirectory: program.source || curDir,
+  outputDirectory: program.target || tmpDir,
+  appName: program.directory,
   rootAppName: program.global
 });
 
