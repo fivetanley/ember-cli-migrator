@@ -165,4 +165,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with application file', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('application.js').split('\n');
+      var actualModel  = result('application.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
