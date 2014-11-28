@@ -156,4 +156,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with unkown types on root app directory', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('router.js').split('\n');
+      var actualModel  = result('router.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
