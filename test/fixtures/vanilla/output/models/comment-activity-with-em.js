@@ -1,4 +1,4 @@
-import Ember from "ember";
+import Ember from 'ember';
 
 var CommentActivityWithEm = Ember.Object.extend({
   someProperty: function(){

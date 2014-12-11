@@ -1,4 +1,4 @@
-import DS from "ember-data";
+import DS from 'ember-data';
 
 var CommentActivitySerializer = DS.Serializer.extend({
   someProperty: function(){
