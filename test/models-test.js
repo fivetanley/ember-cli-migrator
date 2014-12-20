@@ -174,4 +174,21 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with duplicate file names', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/duplicate-name.js').split('\n');
+      var actualModel  = result('views/duplicate-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/duplicate-name-x.js').split('\n');
+      actualModel  = result('views/duplicate-name-x.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/use-duplicates.js').split('\n');
+      actualModel  = result('views/use-duplicates.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
