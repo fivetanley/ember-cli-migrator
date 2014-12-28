@@ -5,3 +5,9 @@ App.DuplicateName = Ember.Object.extend({
 });
 
 App.duplicateName = App.DuplicateName.create();
+
+App.SomeUnknownType = Ember.Object.extend({
+  helloAgain: function() {
+    console.log('hello');
+  }
+});

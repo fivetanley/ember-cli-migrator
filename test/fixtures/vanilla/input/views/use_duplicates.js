@@ -4,5 +4,6 @@ App.UseDuplicates = App.DuplicateName.extend({
   },
   hello: function() {
     console.log('hi');
-  }
+  },
+  helloAgain: App.SomeUnknownType.create()
 });

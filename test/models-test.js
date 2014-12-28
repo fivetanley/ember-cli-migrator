@@ -185,6 +185,10 @@ describe('migrating models', function(){
       actualModel  = result('views/duplicate-name-x.js').split('\n');
       assert.deepEqual(actualModel, expectedModel);
 
+      expectedModel = fixture('views/some-unknown-type.js').split('\n');
+      actualModel  = result('views/some-unknown-type.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
       expectedModel = fixture('views/use-duplicates.js').split('\n');
       actualModel  = result('views/use-duplicates.js').split('\n');
       assert.deepEqual(actualModel, expectedModel);
