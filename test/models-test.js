@@ -204,4 +204,16 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with adapters', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('adapters/application.js').split('\n');
+      var actualModel  = result('adapters/application.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+      var file = path.join(tmpDir, 'my-app', 'store.js');
+      assert(!fs.existsSync(file), 'store.js should not exist');
+    });
+  });
+
+
 });
