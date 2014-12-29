@@ -33,3 +33,8 @@ The project uses [recast](https://github.com/benjamn/recast) (which uses Esprima
 
 # Necessary Manual Steps
 - App.Router = Ember.Router.extend(); placed at beginning of router file
+
+# TODOS
+- [ ] helpers
+- [ ] articles-controller-mixin
+- [ ] move nonjs files to nonjs folder
