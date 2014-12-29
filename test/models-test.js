@@ -174,4 +174,54 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with duplicate file names', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/duplicate-name.js').split('\n');
+      var actualModel  = result('views/duplicate-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/duplicate-name-x.js').split('\n');
+      actualModel  = result('views/duplicate-name-x.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/some-unknown-type.js').split('\n');
+      actualModel  = result('views/some-unknown-type.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/use-duplicates.js').split('\n');
+      actualModel  = result('views/use-duplicates.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with transforms', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('transforms/object.js').split('\n');
+      var actualModel  = result('transforms/object.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with adapters', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('adapters/application.js').split('\n');
+      var actualModel  = result('adapters/application.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+      var file = path.join(tmpDir, 'my-app', 'store.js');
+      assert(!fs.existsSync(file), 'store.js should not exist');
+    });
+  });
+
+  describe('Works with dasherized unknown type filenames', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('unknown_type/misc-long-name.js').split('\n');
+      var actualModel  = result('unknown_type/misc-long-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
