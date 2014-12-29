@@ -224,4 +224,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Copies coffee files to nonjs directory', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      var actualModel  = result('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
