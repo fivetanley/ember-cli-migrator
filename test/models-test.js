@@ -215,5 +215,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with dasherized unknown type filenames', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('unknown_type/misc-long-name.js').split('\n');
+      var actualModel  = result('unknown_type/misc-long-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
 
 });
