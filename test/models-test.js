@@ -224,4 +224,34 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Copies nonjs files to nonjs directory', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      var actualModel  = result('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('nonjs/models/comment_activity_should_ignore.js.erb').split('\n');
+      actualModel  = result('nonjs/models/comment_activity_should_ignore.js.erb').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Copies templates to templates dir', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('templates/atemplate.handlebars').split('\n');
+      var actualModel  = result('templates/atemplate.handlebars').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/components/anothertemplate.hbs').split('\n');
+      actualModel  = result('templates/components/anothertemplate.hbs').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/views/should_be_in_templates.handlebars').split('\n');
+      actualModel  = result('templates/views/should_be_in_templates.handlebars').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });

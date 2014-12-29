@@ -1,0 +1,6 @@
+App.CommentActivity = Ember.Object.extend({
+  erbProperty: "<%= someDumbServerPropertyTooLazyMakeAPI %>",
+  someProperty: function(){
+    console.log('hello');
+  }.property('hello')
+});
