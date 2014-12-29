@@ -237,4 +237,17 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Copies templates to templates dir', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('templates/atemplate.handlebars').split('\n');
+      var actualModel  = result('templates/atemplate.handlebars').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/anothertemplate.hbs').split('\n');
+      actualModel  = result('templates/anothertemplate.hbs').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
