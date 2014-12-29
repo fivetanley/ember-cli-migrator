@@ -244,8 +244,12 @@ describe('migrating models', function(){
       var actualModel  = result('templates/atemplate.handlebars').split('\n');
       assert.deepEqual(actualModel, expectedModel);
 
-      expectedModel = fixture('templates/anothertemplate.hbs').split('\n');
-      actualModel  = result('templates/anothertemplate.hbs').split('\n');
+      expectedModel = fixture('templates/components/anothertemplate.hbs').split('\n');
+      actualModel  = result('templates/components/anothertemplate.hbs').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/views/should_be_in_templates.handlebars').split('\n');
+      actualModel  = result('templates/views/should_be_in_templates.handlebars').split('\n');
       assert.deepEqual(actualModel, expectedModel);
     });
   });
