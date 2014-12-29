@@ -38,3 +38,5 @@ The project uses [recast](https://github.com/benjamn/recast) (which uses Esprima
 - [ ] helpers
 - [ ] articles-controller-mixin
 - [ ] move nonjs files to nonjs folder
+- [ ] use new visitor syntax
+- [ ] App.Something = App.SomethingElse = Ember.Object.extend();

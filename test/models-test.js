@@ -195,4 +195,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Works with transforms', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('transforms/object.js').split('\n');
+      var actualModel  = result('transforms/object.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
