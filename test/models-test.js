@@ -254,4 +254,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Handles reopen in same file', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/reopen.js').split('\n');
+      var actualModel  = result('views/reopen.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
