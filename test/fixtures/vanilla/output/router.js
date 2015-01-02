@@ -5,6 +5,9 @@ var Router = Ember.Router.extend({
     console.log('hello');
   }
 });
+Router.reopen({
+  location: 'auto'
+});
 Router.map(function() {
   this.resource('myresource', {path:'/myresource/:resource_id'}, function(){
     this.route('details');
