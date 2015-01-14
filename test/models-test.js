@@ -263,4 +263,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Copies routes correctly', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('routes/index.js').split('\n');
+      var actualModel  = result('routes/index.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });

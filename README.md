@@ -34,9 +34,10 @@ The project uses [recast](https://github.com/benjamn/recast) (which uses Esprima
 # Necessary Manual Steps
 - App.Router = Ember.Router.extend(); placed at beginning of router file
 - import ./config/environment in router
-- move initializers/registers to initializers
+- move injectors & registers to initializers rather than on App
 - have to merge app.js code, imports etc.
 - move ENV stuff to config/environments.js
+- var ObjectTransform = var ArrayTransform = Ember.Transform.extend
 
 # TODOS
 - [ ] helpers
