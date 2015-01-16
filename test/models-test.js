@@ -272,4 +272,13 @@ describe('migrating models', function(){
     });
   });
 
+  describe('Preserve comments', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('controllers/preserve-comments.js').split('\n');
+      var actualModel  = result('controllers/preserve-comments.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });
