@@ -5,7 +5,7 @@
  */
 
 var program = require('commander');
-var EmberMigrator = require('./ember-migrator');
+var EmberMigrator = require('../ember-migrator');
 var path = require('path');
 var package = require('../package')
 
