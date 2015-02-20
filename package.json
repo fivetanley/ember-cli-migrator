@@ -4,6 +4,7 @@
   "version": "0.2.2",
   "dependencies": {
     "commander": "^2.5.0",
+    "exec-sync": "^0.1.6",
     "mkdirp": "^0.5.0",
     "recast": "^0.8.0",
     "rsvp": "^3.0.14",
