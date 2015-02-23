@@ -19,7 +19,8 @@ describe('migrating models', function(){
     migrator = new EmberMigrator({
       inputDirectory: path.join(__dirname, "fixtures/vanilla/input/"),
       outputDirectory: tmpDir,
-      appName: 'my-app'
+      appName: 'my-app',
+      testing: true
     });
     return migrator.run();
   });
@@ -146,4 +147,139 @@ describe('migrating models', function(){
       assert.deepEqual(actualModel, expectedModel);
     });
   });
+
+  describe('Works with unknown types inside unknown type folders', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('unknown_type/misc.js').split('\n');
+      var actualModel  = result('unknown_type/misc.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with unkown types on root app directory', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('router.js').split('\n');
+      var actualModel  = result('router.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with application file', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('application.js').split('\n');
+      var actualModel  = result('application.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with duplicate file names', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/duplicate-name.js').split('\n');
+      var actualModel  = result('views/duplicate-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/duplicate-name-x.js').split('\n');
+      actualModel  = result('views/duplicate-name-x.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/some-unknown-type.js').split('\n');
+      actualModel  = result('views/some-unknown-type.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('views/use-duplicates.js').split('\n');
+      actualModel  = result('views/use-duplicates.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with transforms', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('transforms/object.js').split('\n');
+      var actualModel  = result('transforms/object.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Works with adapters', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('adapters/application.js').split('\n');
+      var actualModel  = result('adapters/application.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+      var file = path.join(tmpDir, 'my-app', 'store.js');
+      assert(!fs.existsSync(file), 'store.js should not exist');
+    });
+  });
+
+  describe('Works with dasherized unknown type filenames', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('unknown_type/misc-long-name.js').split('\n');
+      var actualModel  = result('unknown_type/misc-long-name.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Copies nonjs files to nonjs directory', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      var actualModel  = result('nonjs/mixins/coffee_mixin.js.coffee').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('nonjs/models/comment_activity_should_ignore.js.erb').split('\n');
+      actualModel  = result('nonjs/models/comment_activity_should_ignore.js.erb').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Copies templates to templates dir', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('templates/atemplate.handlebars').split('\n');
+      var actualModel  = result('templates/atemplate.handlebars').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/components/anothertemplate.hbs').split('\n');
+      actualModel  = result('templates/components/anothertemplate.hbs').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+
+      expectedModel = fixture('templates/views/should_be_in_templates.handlebars').split('\n');
+      actualModel  = result('templates/views/should_be_in_templates.handlebars').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Handles reopen in same file', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('views/reopen.js').split('\n');
+      var actualModel  = result('views/reopen.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Copies routes correctly', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('routes/index.js').split('\n');
+      var actualModel  = result('routes/index.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
+  describe('Preserve comments', function(){
+
+    it('migrates the files correctly', function(){
+      var expectedModel = fixture('controllers/preserve-comments.js').split('\n');
+      var actualModel  = result('controllers/preserve-comments.js').split('\n');
+      assert.deepEqual(actualModel, expectedModel);
+    });
+  });
+
 });

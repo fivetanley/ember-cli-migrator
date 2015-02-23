@@ -5,11 +5,12 @@
  */
 
 var program = require('commander');
-var EmberMigrator = require('./ember-migrator');
+var EmberMigrator = require('../lib/ember-migrator');
 var path = require('path');
+var package = require('../package')
 
 program
-  .version('0.0.1')
+  .version(package.version)
   .option('-g, --global [name]', 'Global namespace of Ember application, eg: "MyApplication = Ember.Application.."')
   .option('-d, --directory [name]', 'Location of Ember application codebase')
   .option('-s, --source [source_directory]', 'Directory to perform migration on')
