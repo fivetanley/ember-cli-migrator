@@ -1,11 +1,17 @@
 ember-cli-migrator
 ==================
 
+# Installation
+
+`npm install -g ember-cli-migrator`
+
+# About
+
 Migrate your files to the standard ember-cli structure, preserving git history.
 
 You can run the command line tool by running the ember-cli-migrator script from within your existing ember project.
 
-Still a weekend, WIP project. The goal of the project is to convert global variables to ES6 Modules. For example:
+The goal of the project is to convert global variables to ES6 Modules. For example:
 
 ```javascript
 App.Post = DS.Model.extend({
