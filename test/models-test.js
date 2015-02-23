@@ -19,7 +19,8 @@ describe('migrating models', function(){
     migrator = new EmberMigrator({
       inputDirectory: path.join(__dirname, "fixtures/vanilla/input/"),
       outputDirectory: tmpDir,
-      appName: 'my-app'
+      appName: 'my-app',
+      testing: true
     });
     return migrator.run();
   });

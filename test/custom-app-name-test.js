@@ -19,7 +19,8 @@ describe('custom app name', function(){
     migrator = new EmberMigrator({
       inputDirectory: path.join(__dirname, "fixtures/custom_app_name/input"),
       outputDirectory: tmpDir,
-      rootAppName: 'MyApp'
+      rootAppName: 'MyApp',
+      testing: true
     });
     return migrator.run();
   });
