@@ -12,7 +12,7 @@ var package = require('../package')
 program
   .version(package.version)
   .option('-g, --global [name]', 'Global namespace of Ember application, eg: "MyApplication = Ember.Application.."')
-  .option('-d, --directory [name]', 'Location of Ember application codebase')
+  .option('-d, --ember-cli-app-name [name]', 'Name of application namespace/modulePrefix. This is the name of the app you would pass to `ember new <ember-cli-app-name>`')
   .option('-s, --source [source_directory]', 'Directory to perform migration on')
   .option('-t, --target [target_directory]',  'Directory to output result of migration')
   .parse(process.argv);
