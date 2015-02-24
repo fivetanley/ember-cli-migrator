@@ -19,7 +19,7 @@ function migrator(options) {
 
   var migrator = new EmberMigrator(opts);
 
-  migrator.expectedOutputFixtureDirectory = path.join(__dirname, "fixtures/", opts.inputFixtures, 'output');
+  migrator.expectedOutputFixtureDirectory = path.join(__dirname, "fixtures/", opts.inputFixtures, '/output');
   migrator.clean = function(){
     rimraf.sync(tmpDir);
   }
@@ -27,7 +27,7 @@ function migrator(options) {
 }
 
 function migratorResult(migrator, fixtureName){
-  var file = path.join(migrator.outputDirectory, migrator.appName, fixtureName);
+  var file = path.join(migrator.outputDirectory, fixtureName);
   return fs.readFileSync(file).toString().split('\n');;
 }
 
