@@ -55,6 +55,12 @@ export default Post;
 -t, --target [target_directory]  Directory to output result of migration
 ```
 
+# Example
+
+To convert an Ember App Kit-like project and put it back in the same parent directory, you can use the following
+
+`ember-cli-migrator -g App -t . -s . -d appkit`
+
 # Testing
 You can run the tests by running `mocha` in the root folder.
 
