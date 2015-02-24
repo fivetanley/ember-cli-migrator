@@ -50,7 +50,7 @@ export default Post;
 -h, --help                       output usage information
 -V, --version                    output the version number
 -g, --global [name]              Global namespace of Ember application, eg: "MyApplication = Ember.Application.."
--d, --directory [name]           Location of Ember application codebase
+-d, --ember-cli-app-name [name], Name of application namespace/modulePrefix. This is the name of the app you would pass to `ember new <ember-cli-app-name>`
 -s, --source [source_directory]  Directory to perform migration on
 -t, --target [target_directory]  Directory to output result of migration
 ```
