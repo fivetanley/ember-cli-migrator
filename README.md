@@ -1,6 +1,9 @@
 ember-cli-migrator
 ==================
 
+**Important: As of 0.5.0 Node JS v0.10 is no longer supported. Please
+use Node v0.12 or IOJS instead.**
+
 # Installation
 
 `npm install -g ember-cli-migrator`
