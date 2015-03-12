@@ -124,4 +124,9 @@ describe('migrating models', function(){
     it(migrates('controllers/preserve-comments.js'));
   });
 
+  describe('Works with multiple assignments per line', function(){
+    it(migrates('routes/one.js'));
+    it(migrates('routes/two.js'));
+  });
+
 });
