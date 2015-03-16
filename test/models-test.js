@@ -103,7 +103,7 @@ describe('migrating models', function(){
 
   describe('Copies nonjs files to nonjs directory', function(){
     it(migrates('nonjs/mixins/coffee_mixin.js.coffee'));
-    it(migrates('nonjs/models/comment_activity_should_ignore.js.erb'))
+    it(migrates('nonjs/models/comment_activity_should_ignore.js.erb'));
   });
 
   describe('Copies templates to templates dir', function(){
@@ -122,6 +122,15 @@ describe('migrating models', function(){
 
   describe('Preserve comments', function(){
     it(migrates('controllers/preserve-comments.js'));
+  });
+
+  describe('Works with multiple assignments per line', function(){
+    it(migrates('routes/one.js'));
+    it(migrates('routes/two.js'));
+  });
+
+  describe('Can mix-in mixins', function(){
+    it(migrates('controllers/with-mixin.js'));
   });
 
 });
