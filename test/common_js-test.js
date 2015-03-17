@@ -6,7 +6,7 @@ var migrates = helper.migrates;
 var it = helper.it;
 var fs = require('fs');
 
-describe('migrating models', function(){
+describe('migrating commonjs', function(){
   before(function(){
     this.migrator = helper.migrator({inputFixtures: 'common_js'});
     this.migrator.run();
