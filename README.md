@@ -65,7 +65,12 @@ To convert an Ember App Kit-like project and put it back in the same parent dire
 `ember-cli-migrator -g App -t . -s . -d appkit`
 
 # Testing
-You can run the tests by running `mocha` in the root folder.
+
+You can run the tests by running `npm test` in the root folder.
+
+# Running the CLI locally
+
+You can run `bin/ember-cli-migrator` from the root of this project and use the command line arguments above.
 
 # Dependencies
 The project uses [recast](https://github.com/benjamn/recast) (which uses Esprima) to walk the JavaScript AST to accurately identify exports and move the file.
