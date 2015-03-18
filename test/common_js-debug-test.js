@@ -16,15 +16,6 @@ describe('migrating commonjs', function(){
     this.migrator.clean();
   });
 
-  describe('Works with application file', function(){
-    it(migrates('application.js'));
-  });
-
-  describe('Works with controller files', function(){
-    it(migrates('controllers/comment-activity.js'));
-    it(migrates('controllers/preserve-comments.js'));
-  });
-
   describe('Works with controllers with dependencies', function(){
     it(migrates('controllers/with-mixin.js'));
   });
