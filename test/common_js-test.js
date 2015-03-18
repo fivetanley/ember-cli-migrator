@@ -20,4 +20,9 @@ describe('migrating commonjs', function(){
     it(migrates('application.js'));
   });
 
+  describe('Works with controller files', function(){
+    it(migrates('controllers/comment-activity.js'));
+    it(migrates('controllers/preserve-comments.js'));
+  });
+
 });
