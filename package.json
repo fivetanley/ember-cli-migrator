@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-migrator",
   "description": "migrates files over to the ember-cli structure",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "dependencies": {
     "chalk": "^1.0.0",
     "commander": "^2.5.0",
