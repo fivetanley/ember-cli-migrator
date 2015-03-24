@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-migrator",
   "description": "migrates files over to the ember-cli structure",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "dependencies": {
     "chalk": "^1.0.0",
     "commander": "^2.5.0",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "chai": "^1.9.2",
     "chai-as-promised": "^4.1.1",
-    "lodash": "^3.3.0",
     "mocha": "^1.21.5",
     "rimraf": "^2.2.8"
   },
