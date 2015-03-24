@@ -58,3 +58,10 @@ module.exports.it = function(result){
   }
   return it(result[0], result[1]);
 }
+
+module.exports.it.only = function(result){
+  if (!Array.isArray(result)) {
+    return it.only(result, arguments[1]);
+  }
+  return it.only(result[0], result[1]);
+};

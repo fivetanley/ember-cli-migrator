@@ -8,7 +8,7 @@
     "ember-cli": "^0.2.0-beta.1",
     "lodash": "^3.5.0",
     "mkdirp": "^0.5.0",
-    "recast": "^0.8.0",
+    "recast": "^0.9.0",
     "rsvp": "^3.0.14",
     "underscore.string": "^2.3.3",
     "walk-sync": "^0.1.3"
