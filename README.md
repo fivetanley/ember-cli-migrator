@@ -84,7 +84,6 @@ The project uses [recast](https://github.com/benjamn/recast) (which uses Esprima
 - var ObjectTransform = var ArrayTransform = Ember.Transform.extend
 
 # TODOS
-- [ ] Analyst.FindPageMixin = Em.Mixin.create(Analyst.PageMixin, {
 - [ ] helpers
-- [ ] use new visitor syntax
-- [ ] App.Something = App.SomethingElse = Ember.Object.extend();
+- [ ] Smarter Router migrations
+- [ ] Handleabars
