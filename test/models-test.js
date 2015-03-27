@@ -88,6 +88,14 @@ describe('migrating models', function(){
     it(migrates('transforms/object.js'));
   });
 
+  describe('Works with components', function(){
+    it(migrates('components/kiwi-phone.js'));
+  });
+
+  describe('Works with servies', function(){
+    it(migrates('services/seattle-alert.js'));
+  });
+
   describe('Works with adapters', function(){
     it(migrates('adapters/application.js'));
 

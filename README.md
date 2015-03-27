@@ -34,6 +34,7 @@ export default Post;
 ```
 # Features
 - The following known module types are currently handled:
+  - Components
   - Controllers
   - Routes
   - Views
@@ -42,6 +43,7 @@ export default Post;
   - Transforms
   - Adapters
   - Serializers
+  - Services
 - Converts file names for you and puts them into the canonical ember CLI folders.
 - Multiple modules in your current file will be split into their own export module and potentially into different folders. For example if you had a model and serializer defined in the same file, the migrator would split the serializer into a file in the serializers folder and the model module would exist in the models folder.
 - Unknown types, e.g., a utility function defined on your app namespace, is exported in a module that is left in the location it was found.
