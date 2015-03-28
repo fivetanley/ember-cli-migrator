@@ -8,7 +8,10 @@ var fs = require('fs');
 
 describe('migrating ember-rails', function(){
   before(function(){
-    this.migrator = helper.migrator({inputFixtures: 'ember-rails'});
+    this.migrator = helper.migrator({
+      inputFixtures: 'ember-rails',
+      rootAppName: 'Pos'
+    });
     this.migrator.run();
   });
 
