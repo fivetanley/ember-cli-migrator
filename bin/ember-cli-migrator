@@ -15,6 +15,7 @@ program
   .option('-a, --ember-cli-app-name [name]', 'Name of application namespace/modulePrefix. This is the name of the app you would pass to `ember new <ember-cli-app-name>`')
   .option('-s, --source [source_directory]', 'Directory to perform migration on')
   .option('-t, --target [target_directory]',  'Directory to output result of migration')
+  .option('-f, --force', 'Migrate even if output files exist')
   .parse(process.argv);
 
 var curDir = './';
@@ -23,6 +24,7 @@ var tmpDir = path.join(curDir, "/tmp");
 var migrator = new EmberMigrator({
   inputDirectory: program.source || curDir,
   outputDirectory: program.target || tmpDir,
+  forceOutput: program.force,
   appName: program.emberCliAppName,
   rootAppName: program.global
 });
