@@ -7,7 +7,7 @@
 var program = require('commander');
 var EmberMigrator = require('../lib/ember-migrator');
 var path = require('path');
-var package = require('../package')
+var package = require('../package');
 
 program
   .version(package.version)
@@ -17,6 +17,7 @@ program
   .option('-t, --target [target_directory]',  'Directory to output result of migration')
   .option('-f, --force', 'Migrate even if output files exist')
   .option('--ignore-subdirs [comma_separated_dirs]', 'Sub-directories in source to ignore')
+  .option('-d, --debug', 'print debugging information')
   .parse(process.argv);
 
 var curDir = './';
@@ -28,7 +29,8 @@ var migrator = new EmberMigrator({
   forceOutput: program.force,
   ignoreDirs: program.ignoreSubdirs,
   appName: program.emberCliAppName,
-  rootAppName: program.global
+  rootAppName: program.global,
+  debug: program.debug
 });
 
 migrator.run();
