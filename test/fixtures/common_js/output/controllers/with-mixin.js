@@ -1,4 +1,4 @@
-import UsefulMixin from '/my-app/mixins/useful';
+import UsefulMixin from 'my-app/mixins/useful';
 import Ember from 'ember';
 
 

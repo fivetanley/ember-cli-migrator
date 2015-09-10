@@ -1,4 +1,4 @@
-import DuplicateName from '/my-app/views/duplicate-name';
+import DuplicateName from 'my-app/views/duplicate-name';
 
 var duplicateName = DuplicateName.create();
 
