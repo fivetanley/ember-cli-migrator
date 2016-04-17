@@ -1,4 +1,4 @@
-ember-cli-migrator
+ember-cli-migrator[![Build Status](https://travis-ci.org/fivetanley/ember-cli-migrator.svg?branch=master)](https://travis-ci.org/fivetanley/ember-cli-migrator)
 ==================
 
 **Important: As of 0.5.0 Node JS v0.10 is no longer supported. Please
