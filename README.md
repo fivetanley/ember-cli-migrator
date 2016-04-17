@@ -52,12 +52,15 @@ export default Post;
 # Command Line Options
 
 ```
--h, --help                       output usage information
--V, --version                    output the version number
--g, --global [name]              Global namespace of Ember application, eg: "MyApplication = Ember.Application.."
--a, --ember-cli-app-name [name], Name of application namespace/modulePrefix. This is the name of the app you would pass to `ember new <ember-cli-app-name>`
--s, --source [source_directory]  Directory to perform migration on
--t, --target [target_directory]  Directory to output result of migration
+-h, --help                              output usage information
+-V, --version                           output the version number
+-g, --global [name]                     Global namespace of Ember application, eg: "MyApplication = Ember.Application.."
+-a, --ember-cli-app-name [name],        Name of application namespace/modulePrefix. This is the name of the app you would pass to `ember new <ember-cli-app-name>`
+-s, --source [source_directory]         Directory to perform migration on
+-t, --target [target_directory]         Directory to output result of migration
+-f, --force                             Migrate even if output files exist
+--keep-source                           Keep source files. (Target does not replicate git history.)
+--ignore-subdirs [comma_separated_dirs] Sub-directories in source to ignore
 ```
 
 # Example

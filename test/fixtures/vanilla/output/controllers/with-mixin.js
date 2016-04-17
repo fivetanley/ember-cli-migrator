@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import UsefulMixin from '/my-app/mixins/useful';
+import UsefulMixin from 'my-app/mixins/useful';
 
 var WithMixinController = Ember.ObjectController.extend(UsefulMixin, {
   someControllerProperty: 'props'

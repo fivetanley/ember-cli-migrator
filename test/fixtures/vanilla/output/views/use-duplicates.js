@@ -1,6 +1,6 @@
-import DuplicateName from '/my-app/views/duplicate-name';
-import duplicateName from '/my-app/views/duplicate-name-x';
-import SomeUnknownType from '/my-app/views/some-unknown-type';
+import DuplicateName from 'my-app/views/duplicate-name';
+import duplicateName from 'my-app/views/duplicate-name-x';
+import SomeUnknownType from 'my-app/views/some-unknown-type';
 
 var UseDuplicates = DuplicateName.extend({
   init: function() {
